@@ -40,7 +40,12 @@
                             <i class="fas fa-bars"></i>
                         </button>
                         <a href="{{ route('home') }}" class="logo">
-                            <img src="{{ asset('upload/about/' . $logo->logo) }}" alt="Porto Logo">
+                            <img src="
+                            @if($logo && $logo->logo)
+                                {{ asset('upload/about/' . $logo->logo) }}
+                            @else
+                                {{ asset('epin-assets/images/logo.png') }}
+                            @endif" alt="Porto Logo">
                         </a>
                     </div>
 

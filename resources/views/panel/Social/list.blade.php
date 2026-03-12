@@ -9,9 +9,6 @@
     <li class="breadcrumb-item active">Sosyal Medya Linkleri</li>
 
     <li class="position-absolute pos-top pos-right d-none d-sm-block">
-        <a href="javascript:void(0);" excel-export class="btn btn-info btn-icon waves-effect waves-themed mr-2" style="margin-top: -8px;" title="Excel Dışa Aktar">
-            <i class="fal fa-file-excel"></i>
-        </a> 
         <a href="{{ route('panel.' . $container->page . '_form') }}" class="btn btn-success btn-icon waves-effect waves-themed" style="margin-top: -8px;" title="Yeni Sosyal Medya Linki Ekle">
             <i class="fal fa-plus"></i>
         </a>

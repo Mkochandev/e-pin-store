@@ -14,15 +14,15 @@ class RatedSeeder extends Seeder
     public function run()
     {
         $rates = [
-        ['name' => 'PEGI 3', 'image' => 'rateds/pegi3.png', 'description' => 'Her yaş için uygun.'],
-        ['name' => 'PEGI 7', 'image' => 'rateds/pegi7.png', 'description' => '7 yaş ve üzeri.'],
-        ['name' => 'PEGI 12', 'image' => 'rateds/pegi12.png', 'description' => '12 yaş ve üzeri.'],
-        ['name' => 'PEGI 16', 'image' => 'rateds/pegi16.png', 'description' => '16 yaş ve üzeri.'],
-        ['name' => 'PEGI 18', 'image' => 'rateds/pegi18.png', 'description' => '+18 Yetişkin içerik.'],
-    ];
+            ['name' => 'PEGI 3', 'image' => 'pegi3.png', 'description' => 'Her yaş için uygun.'],
+            ['name' => 'PEGI 7', 'image' => 'pegi7.png', 'description' => '7 yaş ve üzeri.'],
+            ['name' => 'PEGI 12', 'image' => 'pegi12.png', 'description' => '12 yaş ve üzeri.'],
+            ['name' => 'PEGI 16', 'image' => 'pegi16.png', 'description' => '16 yaş ve üzeri.'],
+            ['name' => 'PEGI 18', 'image' => 'pegi18.png', 'description' => '+18 Yetişkin içerik.'],
+        ];
 
-    foreach ($rates as $rate) {
-        \App\Models\Rated::create($rate);
-    }
+        foreach ($rates as $rate) {
+            \App\Models\Rated::create($rate);
+        }
     }
 }

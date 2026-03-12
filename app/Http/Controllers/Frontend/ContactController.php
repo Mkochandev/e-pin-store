@@ -12,4 +12,16 @@ class ContactController extends Controller
         $contact = Contact::first();
         return view('web.pages.contact', compact('contact'));
     }
+    public function sendMessage(Request $request)
+{
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'message' => 'required'
+    ]);
+
+    \App\Models\ContactMessage::create($request->all());
+
+    return back()->with('success', 'Mesajınız başarıyla iletildi.');
+}
 }

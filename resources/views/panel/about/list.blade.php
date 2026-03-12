@@ -7,15 +7,6 @@
     <li class="breadcrumb-item"><a href="{{ $href }}">{{ $title }}</a></li>
     @endforeach
     <li class="breadcrumb-item active">{{ $container->title }}</li>
-
-    <li class="position-absolute pos-top pos-right d-none d-sm-block">
-        <a href="javascript:void(0);" excel-export class="btn btn-info btn-icon waves-effect waves-themed mr-2" style="margin-top: -8px;" title="Excel Dışa Aktar">
-            <i class="fal fa-file-excel"></i>
-        </a> 
-        <a href="{{ route('panel.' . $container->page . '_form') }}" class="btn btn-success btn-icon waves-effect waves-themed" style="margin-top: -8px;" title="Yeni Hakkımızda Ekle">
-            <i class="fal fa-plus"></i>
-        </a>
-    </li>
 </ol>
 @endsection
 
@@ -87,10 +78,6 @@
                         var html = ''; 
                         html += '<a href="{{ route('panel.' . $container->page . '_form') }}/' + row.id + '" class="btn btn-info btn-sm btn-icon waves-effect waves-themed mr-1" title="Düzenle">';
                         html += '   <i class="fal fa-edit"></i>';
-                        html += '</a>'; 
-                        
-                        html += '<a href="javascript:void(0);" row-delete="' + row.id + '" class="btn btn-danger btn-sm btn-icon waves-effect waves-themed" title="Sil">';
-                        html += '   <i class="fal fa-trash"></i>';
                         html += '</a>'; 
 
                         return html;

@@ -45,6 +45,7 @@ Route::get('/product/{platform}/{game}', [ProductController::class,'detail'])->n
 Route::get('/shop', [ShopController::class,'index'])->name('shop');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact/send', [ContactController::class, 'sendMessage'])->name('contact.send');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

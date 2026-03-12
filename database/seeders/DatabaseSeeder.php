@@ -34,6 +34,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ContactSeeder::class,
         ]);
+        $this->call([
+            SocialSeeder::class,
+        ]);
+        $this->call([
+            GameSeeder::class,
+        ]);
 
 
     }

@@ -9,9 +9,6 @@
     <li class="breadcrumb-item active">Kategoriler Listesi</li>
 
     <li class="position-absolute pos-top pos-right d-none d-sm-block">
-        <a href="javascript:void(0);" excel-export class="btn btn-info btn-icon waves-effect waves-themed mr-2" style="margin-top: -8px;" title="Excel Dışa Aktar">
-            <i class="fal fa-file-excel"></i>
-        </a> 
         <a href="{{ route('panel.' . $container->page . '_form') }}" class="btn btn-success btn-icon waves-effect waves-themed" style="margin-top: -8px;" title="Yeni Kategori Ekle">
             <i class="fal fa-plus"></i>
         </a>
@@ -34,7 +31,6 @@
                             <tr>
                                 <th class="text-center wd-50">#</th>
                                 <th class="text-center wd-100">Kategori Adı</th>
-                                <th class="text-center wd-50">Durum</th>
                                 <th class="text-center wd-50">İşlemler</th>
                             </tr>
                         </thead>
@@ -66,14 +62,6 @@
                     className: 'text-center',
                     defaultContent: '<span class="badge badge-secondary">Belirtilmemiş</span>'
                 }, 
-                {
-                    data: 'is_active', 
-                    name: 'is_active', 
-                    className: 'text-center act-col',
-                    render : function (data, type, row) {
-                        return (data == 1) ? '<span class="badge badge-success">Aktif</span>' : '<span class="badge badge-danger">Pasif</span>';
-                    }
-                },
                 {
                     render : function (data, type, row)
                     {

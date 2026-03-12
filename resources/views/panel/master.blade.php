@@ -344,6 +344,13 @@
                             <span class="nav-link-text" data-i18n="nav.dashboard">Kategoriler</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('panel.contact_message_list') }}" title=""
+                            data-filter-tags="">
+                            <i class="fal fa-address-card"></i>
+                            <span class="nav-link-text" data-i18n="nav.dashboard">İletişim Mesajları</span>
+                            </a>
+                        </li>
                     </ul>
                     <div class="filter-message js-filter-message bg-success-600"></div>
                 </nav>
@@ -441,7 +448,7 @@
                 <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div>
                 <footer class="page-footer" role="contentinfo">
                     <div class="d-flex align-items-center flex-1 text-muted">
-                        <span class="hidden-md-down fw-700">2023 © Gaziantep Bilişim ve Akıllı Kent Teknolojileri
+                        <span class="hidden-md-down fw-700">{{ date('Y') }} © Gaziantep Bilişim ve Akıllı Kent Teknolojileri
                             A.Ş.</span>
                     </div>
                     <div>

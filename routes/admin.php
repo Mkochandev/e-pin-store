@@ -9,6 +9,7 @@ use App\Http\Controllers\Panel\SocialController;
 use App\Http\Controllers\Panel\EditAboutController;
 use App\Http\Controllers\Panel\EditContactController;
 use App\Http\Controllers\Panel\CategoryController;
+use App\Http\Controllers\Panel\ContactMessageController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -63,6 +64,13 @@ Route::group(['prefix' => '', 'middleware' => ['auth:admin']], function () {
         Route::post('form/{unique?}', [CategoryController::class, 'save'])->name('panel.category_save');
         Route::delete('delete', [CategoryController::class, 'delete'])->name('panel.category_delete');
     });
+    Route::group(['prefix' => 'contact_message'], function () {
+        Route::any('', [ContactMessageController::class, 'list'])->name('panel.contact_message_list');
+        Route::get('form/{unique?}', [ContactMessageController::class, 'form'])->name('panel.contact_message_form');
+        Route::post('form/{unique?}', [ContactMessageController::class, 'save'])->name('panel.contact_message_save');
+        Route::delete('delete', [ContactMessageController::class, 'delete'])->name('panel.contact_message_delete');
+    });
+
 
 
 

@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-white">
-                                2022 © <a href="https://gaziantepbilisim.com.tr/" class="text-white" style="text-decoration: none!important;" target="_blank">{{ env('APP_COPR') }}</a>
+                                {{date('Y')}} © <a href="https://gaziantepbilisim.com.tr/" class="text-white" style="text-decoration: none!important;" target="_blank">{{ env('APP_COPR') }}</a>
                             </div>
                         </div>
                     </div>

@@ -19,7 +19,12 @@
                 <div class="col-lg-6">
                     <div class="about-image p-5 text-center"
                         style="background: #1a1a1a; border-radius: 15px; border: 1px solid #333;">
-                        <img src="{{ asset('upload/about/' . $about->logo) }}" style="max-width: 200px;">
+                        <img src="
+                            @if($logo && $logo->logo)
+                                {{ asset('upload/about/' . $logo->logo) }}
+                            @else
+                                {{ asset('epin-assets/images/logo.png') }}
+                            @endif" style="max-width: 200px;">
                     </div>
                 </div>
             </div>

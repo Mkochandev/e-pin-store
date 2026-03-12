@@ -39,7 +39,6 @@
                                 <th class="text-center wd-100">Yayıncı</th> 
                                 <th class="text-center wd-100">Yaş Sınırı</th>  
                                 <th class="text-center wd-100">Eklenme Tarihi</th> 
-                                <th class="text-center wd-100">Durum</th> 
                                 <th class="text-center wd-80">İşlemler</th>
                             </tr>
                         </thead>
@@ -83,14 +82,6 @@
                     defaultContent: '<span class="badge badge-secondary">Belirtilmemiş</span>'
                 },   
                 { data: 'created_at', name: 'created_at', className: 'text-center' }, 
-                {
-                    data: 'is_active', 
-                    name: 'is_active', 
-                    className: 'text-center act-col',
-                    render : function (data, type, row) {
-                        return (data == "Aktif") ? '<span class="badge badge-success">Aktif</span>' : '<span class="badge badge-danger">Pasif</span>';
-                    }
-                },
                 {
                     render : function (data, type, row)
                     {

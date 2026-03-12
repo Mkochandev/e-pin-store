@@ -14,19 +14,19 @@ class PlatformSeeder extends Seeder
     public function run()
     {
         $platforms = [
-        ['name' => 'Steam', 'icon' => 'platforms/steam.png'],
-        ['name' => 'PlayStation Store', 'icon' => 'platforms/psstore.png'],
-        ['name' => 'Xbox', 'icon' => 'platforms/xbox.png'],
-        ['name' => 'Epic Games', 'icon' => 'platforms/epic.png'],
-        ['name' => 'Nintendo', 'icon' => 'platforms/nintendo.png'],
-    ];
+            ['name' => 'Steam', 'icon' => 'steam.png'],
+            ['name' => 'PlayStation Store', 'icon' => 'psstore.png'],
+            ['name' => 'Xbox', 'icon' => 'xbox.png'],
+            ['name' => 'Epic Games', 'icon' => 'epic.png'],
+            ['name' => 'Nintendo', 'icon' => 'nintendo.png'],
+        ];
 
-    foreach ($platforms as $platform) {
-        \App\Models\Platform::create([
-            'name' => $platform['name'],
-            'icon'=> $platform['icon'],
-            'slug' => \Illuminate\Support\Str::slug($platform['name']),
-        ]);
-    }
+        foreach ($platforms as $platform) {
+            \App\Models\Platform::create([
+                'name' => $platform['name'],
+                'icon' => $platform['icon'],
+                'slug' => \Illuminate\Support\Str::slug($platform['name']),
+            ]);
+        }
     }
 }

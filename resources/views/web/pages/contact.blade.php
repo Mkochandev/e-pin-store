@@ -24,21 +24,35 @@
 
                 <div class="col-lg-8">
                     <h2 class="title" style="color: #fff;">Mesaj Gönderin</h2>
-                    <form action="#" class="contact-form">
+
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('contact.send') }}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" class="form-control bg-dark border-secondary text-white"
-                                    placeholder="Adınız *" required style="height: 50px;">
+                                <input type="text" name="name"
+                                    class="form-control bg-dark border-secondary text-white" placeholder="Adınız *" required
+                                    style="height: 50px;">
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control bg-dark border-secondary text-white"
+                                <input type="email" name="email"
+                                    class="form-control bg-dark border-secondary text-white"
                                     placeholder="E-posta Adresiniz *" required style="height: 50px;">
                             </div>
                         </div>
-                        <input type="text" class="form-control bg-dark border-secondary text-white mt-3"
+                        <input type="text" name="subject" class="form-control bg-dark border-secondary text-white mt-3"
                             placeholder="Konu" style="height: 50px;">
-                        <textarea class="form-control bg-dark border-secondary text-white mt-3" rows="5" placeholder="Mesajınız *"
-                            required></textarea>
+
+                        <textarea name="message" class="form-control bg-dark border-secondary text-white mt-3" rows="5"
+                            placeholder="Mesajınız *" required></textarea>
 
                         <button type="submit" class="btn btn-primary btn-lg mt-3">MESAJI GÖNDER</button>
                     </form>

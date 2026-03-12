@@ -15,7 +15,12 @@
         <div class="container">
             <div class="footer-left">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('upload/about/' . $logo->logo) }}" class="logo-footer" alt="E-Pin Logo">
+                    <img src="
+                            @if($logo && $logo->logo)
+                                {{ asset('upload/about/' . $logo->logo) }}
+                            @else
+                                {{ asset('epin-assets/images/logo.png') }}
+                            @endif" class="logo-footer" alt="E-Pin Logo">
                 </a>
                 <div class="social-icons">
                     @foreach ($socials as $social)
@@ -25,8 +30,7 @@
                     @endforeach
                 </div>
             </div>
-            <img src="{{ asset('epin-assets/images/payments_long.png') }}" alt="Ödeme Yöntemleri" width="180"
-                height="28">
+            <img src="{{ asset('epin-assets/images/payments_long.png') }}" alt="Ödeme Yöntemleri" class="logo-footer">
         </div>
     </div>
     <div class="footer-bottom">
