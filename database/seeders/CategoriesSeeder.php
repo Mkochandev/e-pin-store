@@ -28,7 +28,7 @@ class CategoriesSeeder extends Seeder
         'Japon Rol Yapma',
         'Puzzle',
         'MMO',
-        'Fantezi',
+        'Fantastik',
         'Romantik',
         'Sıra Tabanlı',
         'Yarış',

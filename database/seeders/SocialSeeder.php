@@ -14,11 +14,11 @@ class SocialSeeder extends Seeder
     public function run()
     {
         $socials = [
-            ['name' => 'Facebook', 'link' => 'https://www.facebook.com/'],
-            ['name' => 'Twitter', 'link' => 'https://www.twitter.com/'],
-            ['name' => 'Instagram', 'link' => 'https://www.instagram.com/'],
-            ['name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/'],
-            ['name' => 'YouTube', 'link' => 'https://www.youtube.com/'],
+            ['name' => 'Facebook', 'link' => 'https://www.facebook.com/gbbbilimmerkezi/'],
+            ['name' => 'Twitter', 'link' => 'https://x.com/BilisimGbb'],
+            ['name' => 'Instagram', 'link' => 'https://www.instagram.com/gbbbilisim/'],
+            ['name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/company/gbbbilisim/posts/?feedView=all'],
+            ['name' => 'YouTube', 'link' => 'https://www.youtube.com/@GBBBilisim'],
         ];
 
         foreach ($socials as $social) {

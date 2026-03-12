@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categories;
+use App\Models\Platform;
 use App\Models\Key;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,19 +28,27 @@ class ShopController extends Controller
             });
         }
 
+        if ($request->filled('min_price')) {
+            $query->where('price', '>=', $request->min_price);
+        }
+        if ($request->filled('max_price')) {
+            $query->where('price', '<=', $request->max_price);
+        }
+
         if ($request->filled('q')) {
             $query->whereHas('game', function($q) use ($request) {
                 $q->where('name', 'like', '%' . $request->q . '%');
             });
         }
 
-        $games = $query->select('game_id', 'platform_id', DB::raw('MIN(price) as current_price'), DB::raw('count(*) as stock'))
+        $games = $query->select('game_id', 'platform_id', DB::raw('MIN(price) as current_price'))
             ->groupBy('game_id', 'platform_id')
             ->paginate(12)
             ->withQueryString();
 
         $categories = Categories::withCount('games')->get();
+        $platforms = Platform::all();
 
-        return view('web.pages.shop', compact('games', 'categories'));
+        return view('web.pages.shop', compact('games', 'categories', 'platforms'));
     }
 }
