@@ -89,9 +89,6 @@
                     render : function (data, type, row)
                     {
                         var html = ''; 
-                        html += '<a href="{{ route('panel.' . $container->page . '_form') }}/' + row.id + '" class="btn btn-info btn-sm btn-icon waves-effect waves-themed mr-1" title="Düzenle">';
-                        html += '   <i class="fal fa-edit"></i>';
-                        html += '</a>'; 
                         
                         html += '<a href="javascript:void(0);" row-delete="' + row.id + '" class="btn btn-danger btn-sm btn-icon waves-effect waves-themed" title="Sil">';
                         html += '   <i class="fal fa-trash"></i>';

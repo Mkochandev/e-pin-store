@@ -78,7 +78,7 @@
                                         @foreach($categories as $category)
                                             <div class="custom-control custom-checkbox custom-control-inline">
                                                 <input type="checkbox" name="categories[]" class="custom-control-input" id="cat_{{ $category->id }}" value="{{ $category->id }}"
-                                                    @if(isset($game) && $game->categories->contains($category->id)) checked @endif>
+                                                    @if(isset($item) && $item->categories->contains($category->id)) checked @endif>
                                                 <label class="custom-control-label" for="cat_{{ $category->id }}">{{ $category->name }}</label>
                                             </div>
                                         @endforeach
@@ -90,7 +90,7 @@
                                         @foreach($gameModes as $mode)
                                             <div class="custom-control custom-checkbox custom-control-inline">
                                                 <input type="checkbox" name="game_modes[]" class="custom-control-input" id="mode_{{ $mode->id }}" value="{{ $mode->id }}"
-                                                   @if(isset($game) && $game->modes->contains($mode->id)) checked @endif>
+                                                   @if(isset($item) && $item->gameModes->contains($mode->id)) checked @endif>
                                                 <label class="custom-control-label" for="mode_{{ $mode->id }}">{{ $mode->name }}</label>
                                             </div>
                                         @endforeach
