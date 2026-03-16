@@ -27,15 +27,18 @@
                                     <i class="fas fa-heart mr-2"></i> Favorilerim
                                 </a>
                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link text-dark mb-2" style="border-radius: 8px;"
+                                    href="{{ route('profile.settings') }}">
+                                    <i class="fas fa-cog mr-2"></i> Şifre Değiştir
+                                </a>
+                            </li>
 
                             <li class="nav-item mt-4">
-                                <form action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button type="submit"
-                                        class="nav-link text-danger border-0 bg-transparent w-100 text-left">
-                                        <i class="fas fa-sign-out-alt mr-2"></i> Çıkış Yap
-                                    </button>
-                                </form>
+                                <a class="nav-link text-danger border-0 bg-transparent w-100 text-left"
+                                    href="{{ route('logout') }}">
+                                    <i class="fas fa-sign-out-alt mr-2"></i> Çıkış Yap
+                                </a>
                             </li>
                         </ul>
                     </div>

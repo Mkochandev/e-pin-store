@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\AuthController;
 use App\Http\Controllers\Frontend\WishlistController;
+use App\Http\Controllers\Panel\PasswordController;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -61,4 +62,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/wishlist', [WishlistController::class, 'index'])->name('profile.wishlist');
     Route::post('/wishlist/toggle', [WishlistController::class, 'toggle'])->name('wishlist.toggle');
+    Route::get('/profile/settings', [PasswordController::class, 'index'])->name('profile.settings');
+    Route::post('/profile/settings', [PasswordController::class, 'update'])->name('profile.settings.update');
 });
