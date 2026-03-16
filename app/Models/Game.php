@@ -39,4 +39,15 @@ class Game extends Model
     {
         return $this->hasMany(Key::class, 'game_id');
     }
+    public function isFavoritedOnPlatform($platformId)
+{
+    if (!auth()->check()) {
+        return false;
+    }
+
+    return \App\Models\Wishlist::where('user_id', auth()->id())
+        ->where('game_id', $this->id)
+        ->where('platform_id', $platformId)
+        ->exists();
+}
 }

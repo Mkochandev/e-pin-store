@@ -83,10 +83,13 @@
                                                 style="width: 100%; height: 100%; object-fit: cover;">
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="javascript:void(0);" class="btn-icon btn-add-wishlist add-to-wishlist"
+                                            <a href="javascript:void(0);"
+                                                class="btn-icon add-to-wishlist {{ $game->game->isFavoritedOnPlatform($game->platform_id) ? 'active' : '' }}"
                                                 data-game-id="{{ $game->game_id }}"
                                                 data-platform-id="{{ $game->platform_id }}">
-                                                <i class="fa fa-heart"></i>
+
+                                                <i class="fa fa-heart"
+                                                    style="{{ $game->game->isFavoritedOnPlatform($game->platform_id) ? 'color: #e74c3c;' : '' }}"></i>
                                             </a>
                                         </div>
                                         <a href="{{ route('product.detail', ['platform' => $game->platform->slug, 'game' => $game->game->slug]) }}"

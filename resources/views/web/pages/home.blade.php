@@ -76,10 +76,13 @@
                                                     style="width: 280px; height: 392px; object-fit: cover;">
                                             </a>
                                             <div class="btn-icon-group">
-                                                <a href="javascript:void(0);" class="btn-icon btn-add-wishlist add-to-wishlist"
+                                                <a href="javascript:void(0);"
+                                                    class="btn-icon add-to-wishlist {{ $item->game->isFavoritedOnPlatform($item->platform_id) ? 'active' : '' }}"
                                                     data-game-id="{{ $item->game_id }}"
                                                     data-platform-id="{{ $item->platform_id }}">
-                                                    <i class="fa fa-heart"></i>
+
+                                                    <i class="fa fa-heart"
+                                                        style="{{ $item->game->isFavoritedOnPlatform($item->platform_id) ? 'color: #e74c3c;' : '' }}"></i>
                                                 </a>
                                             </div>
                                         </figure>
@@ -113,9 +116,9 @@
                                 <h3 class="mb-md-0 font1">Nintendo Oyunları</h3>
                                 <a class="font1">Nintendo Swıtch ve Swıtch 2 oyunları</a>
                             </div>
-                             <div class="d-flex align-items-center content-right pt-0 py-lg-5">
-                        <a href="{{ route('shop', ['platform' => 'nintendo']) }}" class="btn">Şimdi İncele</a>
-                    </div>
+                            <div class="d-flex align-items-center content-right pt-0 py-lg-5">
+                                <a href="{{ route('shop', ['platform' => 'nintendo']) }}" class="btn">Şimdi İncele</a>
+                            </div>
                         </div>
                     </section>
 
@@ -138,10 +141,13 @@
                                                     style="width: 100%; height: 100%; object-fit: cover;">
                                             </a>
                                             <div class="btn-icon-group">
-                                                <a href="javascript:void(0);" class="btn-icon btn-add-wishlist add-to-wishlist"
+                                                <a href="javascript:void(0);"
+                                                    class="btn-icon add-to-wishlist {{ $item->game->isFavoritedOnPlatform($item->platform_id) ? 'active' : '' }}"
                                                     data-game-id="{{ $item->game_id }}"
                                                     data-platform-id="{{ $item->platform_id }}">
-                                                    <i class="fa fa-heart"></i>
+
+                                                    <i class="fa fa-heart"
+                                                        style="{{ $item->game->isFavoritedOnPlatform($item->platform_id) ? 'color: #e74c3c;' : '' }}"></i>
                                                 </a>
                                             </div>
                                         </figure>
