@@ -32,9 +32,15 @@
                             <div class="toolbox-item toolbox-sort">
                                 <label>Sırala:</label>
                                 <div class="select-custom">
-                                    <select name="orderby" class="form-control">
-                                        <option value="date" selected="selected">Yeniye Göre</option>
-                                        <option value="price">Fiyat: Düşükten Yükseğe</option>
+                                    <select name="orderby" class="form-control" onchange="location = this.value;">
+                                        <option value="{{ request()->fullUrlWithQuery(['orderby' => 'date']) }}"
+                                            {{ request('orderby') == 'date' ? 'selected' : '' }}>Yeniye Göre</option>
+                                        <option value="{{ request()->fullUrlWithQuery(['orderby' => 'price']) }}"
+                                            {{ request('orderby') == 'price' ? 'selected' : '' }}>Fiyat: Düşükten Yükseğe
+                                        </option>
+                                        <option value="{{ request()->fullUrlWithQuery(['orderby' => 'price-desc']) }}"
+                                            {{ request('orderby') == 'price-desc' ? 'selected' : '' }}>Fiyat: Yüksekten
+                                            Düşüğe</option>
                                     </select>
                                 </div>
                             </div>

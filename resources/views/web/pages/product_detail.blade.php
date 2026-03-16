@@ -52,26 +52,26 @@
 
                         <div class="product-info-box">
                             <div class="product-info-date">
-                                <span class="product-info-name">Release date:</span>
+                                <span class="product-info-name">Çıkış Tarihi:</span>
                                 <span class="product-info">{{ $game->release_date }}</span>
                             </div>
                             <div class="product-info-developer">
-                                <span class="product-info-name">Developer:</span>
+                                <span class="product-info-name">Geliştirici:</span>
                                 <span class="product-info">{{ $game->developer ?? 'N/A' }}</span>
                             </div>
                             <div class="product-info-publisher">
-                                <span class="product-info-name">Publisher:</span>
+                                <span class="product-info-name">Yayıncı:</span>
                                 <span class="product-info">{{ $game->publisher ?? 'N/A' }}</span>
                             </div>
                             <div class="product-info-gamemode">
-                                <span class="product-info-name">Game Mode:</span>
+                                <span class="product-info-name">Oyun Modları:</span>
                                 @foreach ($game->gameModes as $mode)
                                     <span class="product-info">{{ $mode->name }}{{ !$loop->last ? ',' : '' }}</span>
                                 @endforeach
                             </div>
 
                             <div class="product-info-rate d-flex align-items-center mt-3">
-                                <span class="product-info-name mr-3">Rated:</span>
+                                <span class="product-info-name mr-3">Yaş Sınırı:</span>
                                 @if ($game->rated)
                                     <img src="{{ asset('storage/rateds/' . $game->rated->image) }}"
                                         alt="{{ $game->rated->name }}"
@@ -84,7 +84,7 @@
 
                         <ul class="single-info-list mt-3">
                             <li>
-                                CATEGORIES:
+                                KATEGORİLER:
                                 <strong>
                                     @foreach ($game->categories as $cat)
                                         <a href="{{ route('shop', ['category' => $cat->slug]) }}"

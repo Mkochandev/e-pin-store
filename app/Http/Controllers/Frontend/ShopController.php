@@ -11,19 +11,19 @@ use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
-    public function index(Request $request) 
+    public function index(Request $request)
     {
         $query = Key::where('is_sold', false)
             ->with(['game.categories', 'platform']);
 
         if ($request->filled('platform')) {
-            $query->whereHas('platform', function($q) use ($request) {
+            $query->whereHas('platform', function ($q) use ($request) {
                 $q->where('slug', $request->platform);
             });
         }
 
         if ($request->filled('category')) {
-            $query->whereHas('game.categories', function($q) use ($request) {
+            $query->whereHas('game.categories', function ($q) use ($request) {
                 $q->where('slug', $request->category);
             });
         }
@@ -36,9 +36,27 @@ class ShopController extends Controller
         }
 
         if ($request->filled('q')) {
-            $query->whereHas('game', function($q) use ($request) {
+            $query->whereHas('game', function ($q) use ($request) {
                 $q->where('name', 'like', '%' . $request->q . '%');
             });
+        }
+        if ($request->filled('orderby')) {
+            switch ($request->orderby) {
+                case 'price':
+                    $query->orderBy('price', 'asc');
+                    break;
+                case 'price-desc':
+                    $query->orderBy('price', 'desc');
+                    break;
+                case 'date':
+                    $query->orderBy('created_at', 'desc');
+                    break;
+                default:
+                    $query->orderBy('created_at', 'desc');
+                    break;
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
         }
 
         $games = $query->select('game_id', 'platform_id', DB::raw('MIN(price) as current_price'))
